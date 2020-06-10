@@ -1,6 +1,6 @@
 {
   "id": "nl.jplekkerkerker.ledstrip",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "name": {
@@ -492,8 +492,8 @@
         "light_temperature"
       ],
       "images": {
-        "large": "/drivers/sk6812/assets/images/large.png",
-        "small": "/drivers/sk6812/assets/images/small.png"
+        "large": "/drivers/sk6812/assets/images/large.jpg",
+        "small": "/drivers/sk6812/assets/images/small.jpg"
       },
       "icon": "/drivers/sk6812/assets/icon.svg",
       "settings": [

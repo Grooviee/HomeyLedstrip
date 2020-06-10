@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Theme speed",
+    "nl": "Thema snelheid"
+  },
+  "uiComponent": "slider",
+  "getable": true,
+  "setable": true,
+  "units": {
+    "en": "%"
+  },
+  "min": 0,
+  "max": 255,
+  "step": 1
+}

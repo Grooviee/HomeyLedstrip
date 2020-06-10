@@ -1,0 +1,46 @@
+{
+  "id": "sk6812",
+  "name": {
+    "en": "SK6812 Ledstrip"
+  },
+  "class": "light",
+  "capabilities": [
+    "light_saturation",
+    "light_hue",
+    "dim",
+    "onoff",
+    "theme",
+    "theme_speed",
+    "color_selection",
+    "light_temperature"
+  ],
+  "images": {
+    "large": "/drivers/sk6812/assets/images/large.jpg",
+    "small": "/drivers/sk6812/assets/images/small.jpg"
+  },
+  "icon": "/drivers/sk6812/assets/icon.svg",
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "General settings",
+        "nl": "Algemene instellingen"
+      },
+      "children": [
+        {
+          "id": "ipAddress",
+          "type": "text",
+          "label": {
+            "en": "Host IP address"
+          },
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "pair": [
+    {
+      "id": "pair_device"
+    }
+  ]
+}

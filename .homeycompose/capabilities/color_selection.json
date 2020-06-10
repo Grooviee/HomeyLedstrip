@@ -1,0 +1,32 @@
+{
+  	"type": "enum",
+  	"title": {
+		"nl": "Geselecteerde kleur",
+		"en": "Selected color"
+	},
+	"getable": true,
+	"setable": true,
+	"values": [
+		{
+			"id": "1",
+			"title": {
+				"en": "Color 1",
+				"nl": "Kleur 1"
+			}
+		},
+		{
+			"id": "2",
+			"title": {
+				"en": "Color 2",
+				"nl": "Kleur 2"
+			}
+		},
+		{
+			"id": "3",
+			"title": {
+				"en": "Color 3",
+				"nl": "Kleur 3"
+			}
+		}
+	]
+}

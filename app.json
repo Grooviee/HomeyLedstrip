@@ -1,0 +1,934 @@
+{
+  "id": "nl.jplekkerkerker.ledstrip",
+  "version": "0.5.0",
+  "compatibility": ">=1.5.0",
+  "sdk": 2,
+  "name": {
+    "en": "SK6812 Ledstrip",
+    "nl": "SK6812 Ledstrip"
+  },
+  "description": {
+    "en": "Add support for SK6812 Ledstrip",
+    "nl": "Voeg support voor SK6812 Ledstrip toe"
+  },
+  "tags": {
+    "en": [
+      "ledstrip",
+      "sk6812",
+      "rgbw"
+    ],
+    "nl": [
+      "ledstrip",
+      "sk6812",
+      "rgbw"
+    ]
+  },
+  "category": [
+    "lights"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.jpg",
+    "small": "/assets/images/small.jpg"
+  },
+  "author": {
+    "name": "Jean-Paul Lekkerkerker",
+    "email": "homey@jplekkerkerker.nl"
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "jplekkerkerker@gmail.com"
+      }
+    }
+  },
+  "flow": {
+    "actions": [
+      {
+        "id": "set_color",
+        "title": {
+          "en": "Set color",
+          "nl": "Zet kleur"
+        },
+        "titleFormatted": {
+          "en": "Change [[color_selection]] to [[color]]",
+          "nl": "Wijzig [[color_selection]] naar [[color]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sk6812"
+          },
+          {
+            "name": "color",
+            "type": "color"
+          },
+          {
+            "name": "color_selection",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Color 1",
+                  "nl": "Kleur 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Color 2",
+                  "nl": "Kleur 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Color 3",
+                  "nl": "Kleur 3"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_theme",
+        "title": {
+          "en": "Set theme",
+          "nl": "Zet thema"
+        },
+        "titleFormatted": {
+          "en": "Set theme [[theme]] with speed [[speed]] / 255",
+          "nl": "Zet thema [[theme]] met snelheid [[speed]] / 255"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sk6812"
+          },
+          {
+            "name": "speed",
+            "type": "range",
+            "min": 0,
+            "max": 255,
+            "step": 1
+          },
+          {
+            "name": "theme",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "title": {
+                  "en": "None"
+                }
+              },
+              {
+                "id": "1",
+                "title": {
+                  "en": "Blink"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "Breath"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "Color Wipe"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "Color Wipe Inverse"
+                }
+              },
+              {
+                "id": "5",
+                "title": {
+                  "en": "Color Wipe Reverse"
+                }
+              },
+              {
+                "id": "6",
+                "title": {
+                  "en": "Color Wipe Reverse Inverse"
+                }
+              },
+              {
+                "id": "7",
+                "title": {
+                  "en": "Color Wipe Random"
+                }
+              },
+              {
+                "id": "8",
+                "title": {
+                  "en": "Random Color"
+                }
+              },
+              {
+                "id": "9",
+                "title": {
+                  "en": "Single Dynamic"
+                }
+              },
+              {
+                "id": "10",
+                "title": {
+                  "en": "Multi Dynamic"
+                }
+              },
+              {
+                "id": "11",
+                "title": {
+                  "en": "Rainbow"
+                }
+              },
+              {
+                "id": "12",
+                "title": {
+                  "en": "Rainbow Cycle"
+                }
+              },
+              {
+                "id": "13",
+                "title": {
+                  "en": "Scan"
+                }
+              },
+              {
+                "id": "14",
+                "title": {
+                  "en": "Dual Scan"
+                }
+              },
+              {
+                "id": "15",
+                "title": {
+                  "en": "Fade"
+                }
+              },
+              {
+                "id": "16",
+                "title": {
+                  "en": "Theater Chase"
+                }
+              },
+              {
+                "id": "17",
+                "title": {
+                  "en": "Theater Chase Rainbow"
+                }
+              },
+              {
+                "id": "18",
+                "title": {
+                  "en": "Running Lights"
+                }
+              },
+              {
+                "id": "19",
+                "title": {
+                  "en": "Twinkle"
+                }
+              },
+              {
+                "id": "20",
+                "title": {
+                  "en": "Twinkle Random"
+                }
+              },
+              {
+                "id": "21",
+                "title": {
+                  "en": "Twinkle Fade"
+                }
+              },
+              {
+                "id": "22",
+                "title": {
+                  "en": "Twinkle Fade Random"
+                }
+              },
+              {
+                "id": "23",
+                "title": {
+                  "en": "Sparkle"
+                }
+              },
+              {
+                "id": "24",
+                "title": {
+                  "en": "Flash Sparkle"
+                }
+              },
+              {
+                "id": "25",
+                "title": {
+                  "en": "Hyper Sparkle"
+                }
+              },
+              {
+                "id": "26",
+                "title": {
+                  "en": "Strobe"
+                }
+              },
+              {
+                "id": "27",
+                "title": {
+                  "en": "Strobe Rainbow"
+                }
+              },
+              {
+                "id": "28",
+                "title": {
+                  "en": "Multi Strobe"
+                }
+              },
+              {
+                "id": "29",
+                "title": {
+                  "en": "Blink Rainbow"
+                }
+              },
+              {
+                "id": "30",
+                "title": {
+                  "en": "Chase White"
+                }
+              },
+              {
+                "id": "31",
+                "title": {
+                  "en": "Chase Color"
+                }
+              },
+              {
+                "id": "32",
+                "title": {
+                  "en": "Chase Random"
+                }
+              },
+              {
+                "id": "33",
+                "title": {
+                  "en": "Chase Rainbow"
+                }
+              },
+              {
+                "id": "34",
+                "title": {
+                  "en": "Chase Flash"
+                }
+              },
+              {
+                "id": "35",
+                "title": {
+                  "en": "Chase Flash Random"
+                }
+              },
+              {
+                "id": "36",
+                "title": {
+                  "en": "Chase Rainbow White"
+                }
+              },
+              {
+                "id": "37",
+                "title": {
+                  "en": "Chase Blackout"
+                }
+              },
+              {
+                "id": "38",
+                "title": {
+                  "en": "Chase Blackout Rainbow"
+                }
+              },
+              {
+                "id": "39",
+                "title": {
+                  "en": "Color Sweep Random"
+                }
+              },
+              {
+                "id": "40",
+                "title": {
+                  "en": "Running Color"
+                }
+              },
+              {
+                "id": "41",
+                "title": {
+                  "en": "Running Red Blue"
+                }
+              },
+              {
+                "id": "42",
+                "title": {
+                  "en": "Running Random"
+                }
+              },
+              {
+                "id": "43",
+                "title": {
+                  "en": "Larson Scanner"
+                }
+              },
+              {
+                "id": "44",
+                "title": {
+                  "en": "Comet"
+                }
+              },
+              {
+                "id": "45",
+                "title": {
+                  "en": "Fireworks"
+                }
+              },
+              {
+                "id": "46",
+                "title": {
+                  "en": "Fireworks Random"
+                }
+              },
+              {
+                "id": "47",
+                "title": {
+                  "en": "Merry Christmas"
+                }
+              },
+              {
+                "id": "48",
+                "title": {
+                  "en": "Fire Flicker"
+                }
+              },
+              {
+                "id": "49",
+                "title": {
+                  "en": "Fire Flicker (soft)"
+                }
+              },
+              {
+                "id": "50",
+                "title": {
+                  "en": "Fire Flicker (intense)"
+                }
+              },
+              {
+                "id": "51",
+                "title": {
+                  "en": "Circus Combustus"
+                }
+              },
+              {
+                "id": "52",
+                "title": {
+                  "en": "Halloween"
+                }
+              },
+              {
+                "id": "53",
+                "title": {
+                  "en": "Bicolor Chase"
+                }
+              },
+              {
+                "id": "54",
+                "title": {
+                  "en": "Tricolor Chase"
+                }
+              },
+              {
+                "id": "56",
+                "title": {
+                  "en": "Autoplay"
+                }
+              },
+              {
+                "id": "60",
+                "title": {
+                  "en": "Fire 2012"
+                }
+              },
+              {
+                "id": "61",
+                "title": {
+                  "en": "Gradient"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "id": "sk6812",
+      "name": {
+        "en": "SK6812 Ledstrip"
+      },
+      "class": "light",
+      "capabilities": [
+        "light_saturation",
+        "light_hue",
+        "dim",
+        "onoff",
+        "theme",
+        "theme_speed",
+        "color_selection",
+        "light_temperature"
+      ],
+      "images": {
+        "large": "/drivers/sk6812/assets/images/large.png",
+        "small": "/drivers/sk6812/assets/images/small.png"
+      },
+      "icon": "/drivers/sk6812/assets/icon.svg",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings",
+            "nl": "Algemene instellingen"
+          },
+          "children": [
+            {
+              "id": "ipAddress",
+              "type": "text",
+              "label": {
+                "en": "Host IP address"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "pair": [
+        {
+          "id": "pair_device"
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "color_selection": {
+      "type": "enum",
+      "title": {
+        "nl": "Geselecteerde kleur",
+        "en": "Selected color"
+      },
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "1",
+          "title": {
+            "en": "Color 1",
+            "nl": "Kleur 1"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Color 2",
+            "nl": "Kleur 2"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Color 3",
+            "nl": "Kleur 3"
+          }
+        }
+      ]
+    },
+    "theme": {
+      "type": "enum",
+      "title": {
+        "en": "Theme selected",
+        "nl": "Thema geselecteerd"
+      },
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "None"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "Blink"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Breath"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "Color Wipe"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Color Wipe Inverse"
+          }
+        },
+        {
+          "id": "5",
+          "title": {
+            "en": "Color Wipe Reverse"
+          }
+        },
+        {
+          "id": "6",
+          "title": {
+            "en": "Color Wipe Reverse Inverse"
+          }
+        },
+        {
+          "id": "7",
+          "title": {
+            "en": "Color Wipe Random"
+          }
+        },
+        {
+          "id": "8",
+          "title": {
+            "en": "Random Color"
+          }
+        },
+        {
+          "id": "9",
+          "title": {
+            "en": "Single Dynamic"
+          }
+        },
+        {
+          "id": "10",
+          "title": {
+            "en": "Multi Dynamic"
+          }
+        },
+        {
+          "id": "11",
+          "title": {
+            "en": "Rainbow"
+          }
+        },
+        {
+          "id": "12",
+          "title": {
+            "en": "Rainbow Cycle"
+          }
+        },
+        {
+          "id": "13",
+          "title": {
+            "en": "Scan"
+          }
+        },
+        {
+          "id": "14",
+          "title": {
+            "en": "Dual Scan"
+          }
+        },
+        {
+          "id": "15",
+          "title": {
+            "en": "Fade"
+          }
+        },
+        {
+          "id": "16",
+          "title": {
+            "en": "Theater Chase"
+          }
+        },
+        {
+          "id": "17",
+          "title": {
+            "en": "Theater Chase Rainbow"
+          }
+        },
+        {
+          "id": "18",
+          "title": {
+            "en": "Running Lights"
+          }
+        },
+        {
+          "id": "19",
+          "title": {
+            "en": "Twinkle"
+          }
+        },
+        {
+          "id": "20",
+          "title": {
+            "en": "Twinkle Random"
+          }
+        },
+        {
+          "id": "21",
+          "title": {
+            "en": "Twinkle Fade"
+          }
+        },
+        {
+          "id": "22",
+          "title": {
+            "en": "Twinkle Fade Random"
+          }
+        },
+        {
+          "id": "23",
+          "title": {
+            "en": "Sparkle"
+          }
+        },
+        {
+          "id": "24",
+          "title": {
+            "en": "Flash Sparkle"
+          }
+        },
+        {
+          "id": "25",
+          "title": {
+            "en": "Hyper Sparkle"
+          }
+        },
+        {
+          "id": "26",
+          "title": {
+            "en": "Strobe"
+          }
+        },
+        {
+          "id": "27",
+          "title": {
+            "en": "Strobe Rainbow"
+          }
+        },
+        {
+          "id": "28",
+          "title": {
+            "en": "Multi Strobe"
+          }
+        },
+        {
+          "id": "29",
+          "title": {
+            "en": "Blink Rainbow"
+          }
+        },
+        {
+          "id": "30",
+          "title": {
+            "en": "Chase White"
+          }
+        },
+        {
+          "id": "31",
+          "title": {
+            "en": "Chase Color"
+          }
+        },
+        {
+          "id": "32",
+          "title": {
+            "en": "Chase Random"
+          }
+        },
+        {
+          "id": "33",
+          "title": {
+            "en": "Chase Rainbow"
+          }
+        },
+        {
+          "id": "34",
+          "title": {
+            "en": "Chase Flash"
+          }
+        },
+        {
+          "id": "35",
+          "title": {
+            "en": "Chase Flash Random"
+          }
+        },
+        {
+          "id": "36",
+          "title": {
+            "en": "Chase Rainbow White"
+          }
+        },
+        {
+          "id": "37",
+          "title": {
+            "en": "Chase Blackout"
+          }
+        },
+        {
+          "id": "38",
+          "title": {
+            "en": "Chase Blackout Rainbow"
+          }
+        },
+        {
+          "id": "39",
+          "title": {
+            "en": "Color Sweep Random"
+          }
+        },
+        {
+          "id": "40",
+          "title": {
+            "en": "Running Color"
+          }
+        },
+        {
+          "id": "41",
+          "title": {
+            "en": "Running Red Blue"
+          }
+        },
+        {
+          "id": "42",
+          "title": {
+            "en": "Running Random"
+          }
+        },
+        {
+          "id": "43",
+          "title": {
+            "en": "Larson Scanner"
+          }
+        },
+        {
+          "id": "44",
+          "title": {
+            "en": "Comet"
+          }
+        },
+        {
+          "id": "45",
+          "title": {
+            "en": "Fireworks"
+          }
+        },
+        {
+          "id": "46",
+          "title": {
+            "en": "Fireworks Random"
+          }
+        },
+        {
+          "id": "47",
+          "title": {
+            "en": "Merry Christmas"
+          }
+        },
+        {
+          "id": "48",
+          "title": {
+            "en": "Fire Flicker"
+          }
+        },
+        {
+          "id": "49",
+          "title": {
+            "en": "Fire Flicker (soft)"
+          }
+        },
+        {
+          "id": "50",
+          "title": {
+            "en": "Fire Flicker (intense)"
+          }
+        },
+        {
+          "id": "51",
+          "title": {
+            "en": "Circus Combustus"
+          }
+        },
+        {
+          "id": "52",
+          "title": {
+            "en": "Halloween"
+          }
+        },
+        {
+          "id": "53",
+          "title": {
+            "en": "Bicolor Chase"
+          }
+        },
+        {
+          "id": "54",
+          "title": {
+            "en": "Tricolor Chase"
+          }
+        },
+        {
+          "id": "56",
+          "title": {
+            "en": "Autoplay"
+          }
+        },
+        {
+          "id": "60",
+          "title": {
+            "en": "Fire 2012"
+          }
+        },
+        {
+          "id": "61",
+          "title": {
+            "en": "Gradient"
+          }
+        }
+      ]
+    },
+    "theme_speed": {
+      "type": "number",
+      "title": {
+        "en": "Theme speed",
+        "nl": "Thema snelheid"
+      },
+      "uiComponent": "slider",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "%"
+      },
+      "min": 0,
+      "max": 255,
+      "step": 1
+    }
+  }
+}

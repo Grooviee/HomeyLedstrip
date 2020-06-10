@@ -1,0 +1,13 @@
+{
+  "name": "nl.jplekkerkerker.ledstrip",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {
+    "homey": "^2.3.5"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "color-convert": "^2.0.1",
+    "hex-rgb": "^4.1.0"
+  }
+}

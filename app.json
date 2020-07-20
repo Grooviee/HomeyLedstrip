@@ -1,6 +1,6 @@
 {
   "id": "nl.jplekkerkerker.ledstrip",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "name": {
@@ -8,8 +8,8 @@
     "nl": "SK6812 Ledstrip"
   },
   "description": {
-    "en": "Add support for SK6812 Ledstrip",
-    "nl": "Voeg support voor SK6812 Ledstrip toe"
+    "en": "Setting the right theme for each moment with your ledstrip",
+    "nl": "Zet het juiste thema voor elk moment met je ledstrip"
   },
   "tags": {
     "en": [
@@ -38,7 +38,7 @@
   "contributing": {
     "donate": {
       "paypal": {
-        "username": "jplekkerkerker@gmail.com"
+        "username": "delekkeketel"
       }
     }
   },

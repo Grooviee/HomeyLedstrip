@@ -4,5 +4,8 @@
   },
   "1.1.0": {
     "en": "Update README"
+  },
+  "1.1.1" : {
+  	"en": "Fix issue with setting the strip off while off turning it on"
   }
 }

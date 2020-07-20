@@ -7,6 +7,9 @@ https://github.com/FabLab-Luenen/McLighting
 
 # Changelog
 
+##### v1.1.1
+- Fix issue with setting the strip off while off turning it on. (McLighting off-command is actually a toggle)
+
 ##### v1.1.0
 - Update README
 

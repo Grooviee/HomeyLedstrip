@@ -7,6 +7,9 @@ https://github.com/FabLab-Luenen/McLighting
 
 # Changelog
 
+##### v1.2.0
+- Update to Homey sdk v3
+
 ##### v1.1.1
 - Fix issue with setting the strip off while off turning it on. (McLighting off-command is actually a toggle)
 

@@ -7,9 +7,8 @@ class LedstripSK6812Driver extends Homey.Driver {
 	onInit() {
 		this.log('LedstripSK6812Driver has been inited');
 
-		new Homey.FlowCardAction('set_color')
-  	  		.register()
-  	  		.registerRunListener( args => {
+		 this.homey.flow.getActionCard('set_color')
+  	  		.registerRunListener( async (args, state) => {
       			let device = args.device;
     	  		return device.setColorSelection({
     	  			color: args.color, 
@@ -17,9 +16,8 @@ class LedstripSK6812Driver extends Homey.Driver {
     	  		});
   			});
 
-		new Homey.FlowCardAction('set_theme')
-  	  		.register()
-  	  		.registerRunListener( args => {
+		this.homey.flow.getActionCard('set_theme')
+  	  		.registerRunListener( async (args, state) => {
       			let device = args.device;
     	  		return device.setTheme({
     	  			theme: args.theme, 

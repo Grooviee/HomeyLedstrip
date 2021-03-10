@@ -7,5 +7,9 @@
   },
   "1.1.1" : {
   	"en": "Fix issue with setting the strip off while off turning it on"
+  },
+  "1.2.0" : {
+  	"en": "Update to Homey sdk v3"
   }
+
 }
